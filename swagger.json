@@ -1,62 +1,60 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "title": "Recipe Book API",
-    "description": "Recipe Book API",
-    "version": "1.0.0"
-  },
-  "host": "localhost:3000",
-  "basePath": "/",
-  "schemes": [
-    "http"
-  ],
-  "paths": {
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/recipes/": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/recipes/{id}": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    }
-  }
+	"swagger": "2.0",
+	"info": {
+		"title": "Recipe Book API",
+		"description": "Recipe Book API",
+		"version": "1.0.0"
+	},
+	"host": "https://recipe-book-00.herokuapp.com",
+	"basePath": "/",
+	"schemes": ["https"],
+	"paths": {
+		"/api-docs": {
+			"get": {
+				"description": "",
+				"parameters": [],
+				"responses": {}
+			}
+		},
+		"/": {
+			"get": {
+				"description": "",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				}
+			}
+		},
+		"/recipes/": {
+			"get": {
+				"description": "",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				}
+			}
+		},
+		"/recipes/{id}": {
+			"get": {
+				"description": "",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				}
+			}
+		}
+	}
 }
