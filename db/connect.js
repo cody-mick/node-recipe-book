@@ -10,7 +10,7 @@ let _collection;
 const initDatabase = () => {
 	MongoClient.connect(process.env.MONGODB_URI, (err, client) => {
 		if (err) throw err;
-		_collection = client.db("database01").collection("recipes");
+		_collection = client.db("recipes").collection("recipes");
 		console.log("DB Connected Successfully!");
 	});
 };

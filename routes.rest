@@ -1,2 +1,5 @@
 ### GET all recipes
 http://localhost:3000/recipes
+
+### GET recipe by id
+http://localhost:3000/recipes/6287e9f9653775daa265d2ec

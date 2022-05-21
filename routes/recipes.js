@@ -23,3 +23,5 @@ routes.get("/:id", (req, res) => {
 		console.log(`Returned Recipe ${req.params.id}`);
 	});
 });
+
+module.exports = routes;
