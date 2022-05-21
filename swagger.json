@@ -5,7 +5,7 @@
 		"description": "Recipe Book API",
 		"version": "1.0.0"
 	},
-	"host": "https://recipe-book-00.herokuapp.com",
+	"host": "recipe-book-00.herokuapp.com",
 	"basePath": "/",
 	"schemes": ["https"],
 	"paths": {
