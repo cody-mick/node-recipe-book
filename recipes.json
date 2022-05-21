@@ -1,0 +1,25 @@
+[
+	{
+		"name": "Peanut Butter and Jelly Sandwich",
+		"ingredients": [
+			{
+				"quantity": "2 Slices",
+				"name": "bread"
+			},
+			{
+				"quantity": "2 Tbsp",
+				"name": "peanut butter"
+			},
+			{
+				"quantity": "1/2 Tbsp",
+				"name": "grape jelly"
+			}
+		],
+		"steps": [
+			"Spread peanut butter evenly on the 2 slices of bread",
+			"Spread the jelly evenly on one of the slices",
+			"Stick the bread together with the peanut butter sides facing each other",
+			"Enjoy!"
+		]
+	}
+]

@@ -1,0 +1,2 @@
+### GET all recipes
+http://localhost:3000/recipes
