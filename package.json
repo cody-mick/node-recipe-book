@@ -19,7 +19,7 @@
 	"homepage": "https://github.com/cody-mick/node-recipe-book#readme",
 	"devDependencies": {
 		"cors": "^2.8.5",
-		"swagger-ui-express": "^4.4.0"
+		"swagger-autogen": "^2.21.1"
 	},
 	"dependencies": {
 		"body-parser": "^1.20.0",
@@ -30,7 +30,7 @@
 		"mongoose": "^6.3.3",
 		"node": "^17.7.2",
 		"nodemon": "^2.0.16",
-		"swagger-autogen": "^2.21.1"
+		"swagger-ui-express": "^4.4.0"
 	},
 	"keywords": [],
 	"description": ""
