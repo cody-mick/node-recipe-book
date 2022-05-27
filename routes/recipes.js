@@ -24,4 +24,19 @@ routes.get("/:id", (req, res) => {
 	});
 });
 
+routes.post("/", (req, res) => {
+	const recipe = {
+		name: req.body.name,
+		ingredients: req.body.ingredients,
+		steps: req.body.steps,
+	};
+
+	const response = connect.getCollection().insertOne(recipe);
+	if (response) {
+		res.status(201).json("Recipe created successfully");
+	} else {
+		res.status(500).json("Some error occurred while creating the recipe");
+	}
+});
+
 module.exports = routes;
