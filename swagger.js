@@ -5,8 +5,8 @@ const doc = {
 		title: "Recipe Book API",
 		description: "Recipe Book API",
 	},
-	host: "recipe-book-00.herokuapp.com",
-	schemes: ["https"],
+	host: "localhost:3000",
+	schemes: ["http"],
 };
 
 const outputFile = "./swagger.json";

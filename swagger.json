@@ -1,86 +1,84 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "title": "Recipe Book API",
-    "description": "Recipe Book API",
-    "version": "1.0.0"
-  },
-  "host": "recipe-book-00.herokuapp.com",
-  "basePath": "/",
-  "schemes": [
-    "https"
-  ],
-  "paths": {
-    "/": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/recipes/": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "ingredients": {
-                  "example": "any"
-                },
-                "steps": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/recipes/{id}": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    }
-  }
+	"swagger": "2.0",
+	"info": {
+		"title": "Recipe Book API",
+		"description": "Recipe Book API",
+		"version": "1.0.0"
+	},
+	"host": "localhost:3000",
+	"basePath": "/",
+	"schemes": ["http"],
+	"paths": {
+		"/": {
+			"get": {
+				"description": "",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				}
+			}
+		},
+		"/recipes/": {
+			"get": {
+				"description": "",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				}
+			},
+			"post": {
+				"description": "",
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"example": "any"
+								},
+								"ingredients": {
+									"example": "any"
+								},
+								"steps": {
+									"example": "any"
+								}
+							}
+						}
+					}
+				],
+				"responses": {
+					"201": {
+						"description": "Created"
+					},
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			}
+		},
+		"/recipes/{id}": {
+			"get": {
+				"description": "",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				}
+			}
+		}
+	}
 }

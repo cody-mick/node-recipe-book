@@ -24,12 +24,16 @@ routes.get("/:id", (req, res) => {
 	});
 });
 
+// create a new recipe
+
 routes.post("/", (req, res) => {
 	const recipe = {
 		name: req.body.name,
 		ingredients: req.body.ingredients,
 		steps: req.body.steps,
 	};
+
+	console.log(req.body);
 
 	const response = connect.getCollection().insertOne(recipe);
 	if (response) {

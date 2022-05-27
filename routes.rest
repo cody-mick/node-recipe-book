@@ -5,7 +5,7 @@ http://localhost:3000/recipes
 http://localhost:3000/recipes/6287e9f9653775daa265d2ec
 
 ### POST new recipe
-https://localhost:3000/recipes HTTP/1.1 Content-Type: application/json
+POST http://localhost:3000/recipes HTTP/1.1 Content-Type: application/json
 
 {
     "name": "Chocolate Chip Cookies",
