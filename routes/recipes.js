@@ -52,7 +52,7 @@ routes.put("/:id", (req, res) => {
 		steps: req.body.steps,
 	};
 
-	const response = connect.getCollection().replaceOne({ _id: id }, contact);
+	const response = connect.getCollection().replaceOne({ _id: id }, recipe);
 	if (response) {
 		res.status(204).send();
 	} else {
