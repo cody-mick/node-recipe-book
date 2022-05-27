@@ -43,6 +43,8 @@ routes.post("/", (req, res) => {
 	}
 });
 
+// PUT (update) recipe by id
+
 routes.put("/:id", (req, res) => {
 	const id = new ObjectId(req.params.id);
 
@@ -59,6 +61,20 @@ routes.put("/:id", (req, res) => {
 		res
 			.status(500)
 			.json(response.error || "Some error occurred while updating the recipe.");
+	}
+});
+
+// DELETE recipe by id
+
+routes.delete("/:id", (req, res) => {
+	const id = new ObjectId(req.params.id);
+	const response = connect.getCollection().deleteOne({ _id: id });
+	if (response) {
+		res.status(204).send();
+	} else {
+		res
+			.status(500)
+			.json(response.error || "Some error occurred while deleting the recipe");
 	}
 });
 
