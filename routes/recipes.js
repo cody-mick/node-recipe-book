@@ -43,4 +43,23 @@ routes.post("/", (req, res) => {
 	}
 });
 
+routes.put("/:id", (req, res) => {
+	const id = new ObjectId(req.params.id);
+
+	const recipe = {
+		name: req.body.name,
+		ingredients: req.body.ingredients,
+		steps: req.body.steps,
+	};
+
+	const response = connect.getCollection().replaceOne({ _id: id }, contact);
+	if (response) {
+		res.status(204).send();
+	} else {
+		res
+			.status(500)
+			.json(response.error || "Some error occurred while updating the recipe.");
+	}
+});
+
 module.exports = routes;
