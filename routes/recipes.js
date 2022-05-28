@@ -15,25 +15,19 @@ routes.get("/", (req, res) => {
 
 // Get a recipe by ID
 
-routes.get(
-	"/:id",
-	param("id").customSanitizer((value) => {
-		return ObjectId(value);
-	}),
-	(req, res) => {
-		const recipeId = new ObjectId(req.params.id);
-		const results = connect.getCollection().find({ _id: recipeId });
+routes.get("/:id", (req, res) => {
+	const recipeId = new ObjectId(req.params.id);
+	const results = connect.getCollection().find({ _id: recipeId });
 
-		results.toArray().then((documents) => {
-			res.status(200).json(documents[0]);
-			console.log(`Returned Recipe ${req.params.id}`);
-		});
-	}
-);
+	results.toArray().then((documents) => {
+		res.status(200).json(documents[0]);
+		console.log(`Returned Recipe ${req.params.id}`);
+	});
+});
 
 // create a new recipe
 
-routes.post("/", body("name").not().isEmpty().trim().escape(), (req, res) => {
+routes.post("/", (req, res) => {
 	const recipe = {
 		name: req.body.name,
 		ingredients: req.body.ingredients,
@@ -52,53 +46,37 @@ routes.post("/", body("name").not().isEmpty().trim().escape(), (req, res) => {
 
 // PUT (update) recipe by id
 
-routes.put(
-	"/:id",
-	param("id").customSanitizer((value) => {
-		return ObjectId(value);
-	}),
-	(req, res) => {
-		const id = new ObjectId(req.params.id);
+routes.put("/:id", (req, res) => {
+	const id = new ObjectId(req.params.id);
 
-		const recipe = {
-			name: req.body.name,
-			ingredients: req.body.ingredients,
-			steps: req.body.steps,
-		};
+	const recipe = {
+		name: req.body.name,
+		ingredients: req.body.ingredients,
+		steps: req.body.steps,
+	};
 
-		const response = connect.getCollection().replaceOne({ _id: id }, recipe);
-		if (response) {
-			res.status(204).send();
-		} else {
-			res
-				.status(500)
-				.json(
-					response.error || "Some error occurred while updating the recipe."
-				);
-		}
+	const response = connect.getCollection().replaceOne({ _id: id }, recipe);
+	if (response) {
+		res.status(204).send();
+	} else {
+		res
+			.status(500)
+			.json(response.error || "Some error occurred while updating the recipe.");
 	}
-);
+});
 
 // DELETE recipe by id
 
-routes.delete(
-	"/:id",
-	param("id").customSanitizer((value) => {
-		return ObjectId(value);
-	}),
-	(req, res) => {
-		const id = new ObjectId(req.params.id);
-		const response = connect.getCollection().deleteOne({ _id: id });
-		if (response) {
-			res.status(204).send();
-		} else {
-			res
-				.status(500)
-				.json(
-					response.error || "Some error occurred while deleting the recipe"
-				);
-		}
+routes.delete("/:id", (req, res) => {
+	const id = new ObjectId(req.params.id);
+	const response = connect.getCollection().deleteOne({ _id: id });
+	if (response) {
+		res.status(204).send();
+	} else {
+		res
+			.status(500)
+			.json(response.error || "Some error occurred while deleting the recipe");
 	}
-);
+});
 
 module.exports = routes;
