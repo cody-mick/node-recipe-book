@@ -15,7 +15,7 @@ routes.get("/", (req, res) => {
 
 // Get a recipe by ID
 
-routes.get("/:id", body("id").isEmpty(), (req, res) => {
+routes.get("/:id", body("id").not().isEmpty().trim(), (req, res) => {
 	const recipeId = new ObjectId(req.params.id);
 	const results = connect.getCollection().find({ _id: recipeId });
 
