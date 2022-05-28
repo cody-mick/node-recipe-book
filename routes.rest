@@ -63,5 +63,5 @@ POST http://localhost:3000/recipes HTTP/1.1 Content-Type: application/json
 ### GET all recipes heroku
 https://recipe-book-00.herokuapp.com/recipes
 
-# GET recipe by id heroku
-https://recipe-book-00.herokuapp.com/recipes/6287e9f9653775daa265d2ec
+### GET recipe by id heroku
+https://recipe-book-00.herokuapp.com/recipes/629136780a023f0b2e88cea2
