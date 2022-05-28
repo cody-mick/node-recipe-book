@@ -1,5 +1,5 @@
 const routes = require("express").Router();
-const { body } = require("express-validator");
+const { body, validationResult } = require("express-validator");
 const connect = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 
@@ -15,7 +15,7 @@ routes.get("/", (req, res) => {
 
 // Get a recipe by ID
 
-routes.get("/:id", (req, res) => {
+routes.get("/:id", body("id").isEmpty(), (req, res) => {
 	const recipeId = new ObjectId(req.params.id);
 	const results = connect.getCollection().find({ _id: recipeId });
 
