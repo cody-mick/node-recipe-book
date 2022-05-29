@@ -45,7 +45,7 @@ POST http://localhost:3000/recipes HTTP/1.1 Content-Type: application/json
                 {
             "quantity": "1 Cup",
             "name": "semisweet chocolate chips"
-        },
+        }
     ],
     "steps": [
         "Preheat oven to 350 F",
@@ -57,7 +57,7 @@ POST http://localhost:3000/recipes HTTP/1.1 Content-Type: application/json
         "Stir in chocolate chips.",
         "Scoop out 1.5 tablespoons of dough (medium cookie scoop) and place 2 inches apart on baking sheet.",
         "Bake for 7-10 minutes, or until cookies are set. They will be puffy and still look a little underbaked in the middle."
-    ],
+    ]
 }
 
 ### GET all recipes heroku

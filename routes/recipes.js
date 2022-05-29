@@ -46,7 +46,7 @@ routes.post("/", (req, res) => {
 
 // PUT (update) recipe by id
 
-routes.put("/:id", (req, res) => {
+routes.put("/:id", body("id").not().isEmpty().trim(), (req, res) => {
 	const id = new ObjectId(req.params.id);
 
 	const recipe = {
@@ -67,7 +67,7 @@ routes.put("/:id", (req, res) => {
 
 // DELETE recipe by id
 
-routes.delete("/:id", (req, res) => {
+routes.delete("/:id", body("id").not().isEmpty().trim(), (req, res) => {
 	const id = new ObjectId(req.params.id);
 	const response = connect.getCollection().deleteOne({ _id: id });
 	if (response) {
