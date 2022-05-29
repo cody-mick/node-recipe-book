@@ -1,5 +1,10 @@
 const routes = require("express").Router();
-const { body, validationResult, check } = require("express-validator");
+const {
+	body,
+	validationResult,
+	check,
+	checkSchema,
+} = require("express-validator");
 const connect = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 
