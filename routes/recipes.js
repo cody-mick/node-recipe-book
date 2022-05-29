@@ -1,5 +1,5 @@
 const routes = require("express").Router();
-const { body, validationResult } = require("express-validator");
+const { body, validationResult, check } = require("express-validator");
 const connect = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 
@@ -27,22 +27,28 @@ routes.get("/:id", body("id").not().isEmpty().trim(), (req, res) => {
 
 // create a new recipe
 
-routes.post("/", (req, res) => {
-	const recipe = {
-		name: req.body.name,
-		ingredients: req.body.ingredients,
-		steps: req.body.steps,
-	};
+routes.post(
+	"/",
+	check("name")
+		.isLength({ min: 5 })
+		.withMessage("Name must be longer than 5 characters"),
+	(req, res) => {
+		const recipe = {
+			name: req.body.name,
+			ingredients: req.body.ingredients,
+			steps: req.body.steps,
+		};
 
-	console.log(req.body);
+		console.log(req.body);
 
-	const response = connect.getCollection().insertOne(recipe);
-	if (response) {
-		res.status(201).json("Recipe created successfully");
-	} else {
-		res.status(500).json("Some error occurred while creating the recipe");
+		const response = connect.getCollection().insertOne(recipe);
+		if (response) {
+			res.status(201).json("Recipe created successfully");
+		} else {
+			res.status(500).json("Some error occurred while creating the recipe");
+		}
 	}
-});
+);
 
 // PUT (update) recipe by id
 
