@@ -10,7 +10,7 @@ const doc = {
 	securityDefinitions: {
 		oAuthSample: {
 			type: "oauth2",
-			authorizationUrl: "https://recipe-book-00.herokuapp.com/oauth/authorize",
+			authorizationUrl: "https://recipe-book-00.herokuapp.com/api-docs",
 			flow: "implicit",
 			scopes: {
 				read_recipes: "read your recipes",
