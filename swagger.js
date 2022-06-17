@@ -7,6 +7,17 @@ const doc = {
 	},
 	host: "recipe-book-00.herokuapp.com",
 	schemes: ["https"],
+	securityDefinitions: {
+		oAuthSample: {
+			type: "oauth2",
+			authorizationUrl: "https://recipe-book-00.herokuapp.com/oauth/authorize",
+			flow: "implicit",
+			scopes: {
+				read_recipes: "read your recipes",
+				write_recipes: "modify recipes in your account",
+			},
+		},
+	},
 };
 
 const outputFile = "./swagger.json";

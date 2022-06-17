@@ -1,156 +1,153 @@
 {
-	"swagger": "2.0",
-	"info": {
-		"title": "Recipe Book API",
-		"description": "Recipe Book API",
-		"version": "1.0.0"
-	},
-	"securityDefinitions": {
-		"api_key": {
-			"type": "apiKey",
-			"name": "api_key",
-			"in": "header"
-		},
-		"oauth": {
-			"type": "oauth2",
-			"authorizationUrl": "https://recipe-book-00.herokuapp.com/api-docs/auth",
-			"flow": "implicit",
-			"scopes": {
-				"read:recipes": "read recipe data"
-			}
-		}
-	},
-	"host": "recipe-book-00.herokuapp.com",
-	"basePath": "/",
-	"schemes": ["https"],
-	"paths": {
-		"/": {
-			"get": {
-				"description": "",
-				"parameters": [],
-				"responses": {
-					"200": {
-						"description": "OK"
-					}
-				}
-			}
-		},
-		"/recipes/": {
-			"get": {
-				"description": "",
-				"parameters": [],
-				"responses": {
-					"200": {
-						"description": "OK"
-					}
-				}
-			},
-			"post": {
-				"description": "",
-				"parameters": [
-					{
-						"name": "body",
-						"in": "body",
-						"schema": {
-							"type": "object",
-							"properties": {
-								"name": {
-									"example": "any"
-								},
-								"ingredients": {
-									"example": "any"
-								},
-								"steps": {
-									"example": "any"
-								}
-							}
-						}
-					}
-				],
-				"responses": {
-					"201": {
-						"description": "Created"
-					},
-					"500": {
-						"description": "Internal Server Error"
-					}
-				}
-			}
-		},
-		"/recipes/{id}": {
-			"get": {
-				"description": "Returns a recipe",
-				"produces": ["application/json"],
-				"parameters": [
-					{
-						"name": "id",
-						"in": "path",
-						"required": true,
-						"type": "string"
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "OK"
-					}
-				}
-			},
-			"put": {
-				"description": "",
-				"parameters": [
-					{
-						"name": "id",
-						"in": "path",
-						"required": true,
-						"type": "string"
-					},
-					{
-						"name": "body",
-						"in": "body",
-						"schema": {
-							"type": "object",
-							"properties": {
-								"name": {
-									"example": "any"
-								},
-								"ingredients": {
-									"example": "any"
-								},
-								"steps": {
-									"example": "any"
-								}
-							}
-						}
-					}
-				],
-				"responses": {
-					"204": {
-						"description": "No Content"
-					},
-					"500": {
-						"description": "Internal Server Error"
-					}
-				}
-			},
-			"delete": {
-				"description": "",
-				"parameters": [
-					{
-						"name": "id",
-						"in": "path",
-						"required": true,
-						"type": "string"
-					}
-				],
-				"responses": {
-					"204": {
-						"description": "No Content"
-					},
-					"500": {
-						"description": "Internal Server Error"
-					}
-				}
-			}
-		}
-	}
+  "swagger": "2.0",
+  "info": {
+    "title": "Recipe Book API",
+    "description": "Recipe Book API",
+    "version": "1.0.0"
+  },
+  "host": "recipe-book-00.herokuapp.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "oAuthSample": {
+      "type": "oauth2",
+      "authorizationUrl": "https://recipe-book-00.herokuapp.com/oauth/authorize",
+      "flow": "implicit",
+      "scopes": {
+        "read_recipes": "read your recipes",
+        "write_recipes": "modify recipes in your account"
+      }
+    }
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/recipes/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "ingredients": {
+                  "example": "any"
+                },
+                "steps": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/recipes/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "ingredients": {
+                  "example": "any"
+                },
+                "steps": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
 }
