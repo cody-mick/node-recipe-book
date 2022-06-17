@@ -80,9 +80,7 @@
 		"/recipes/{id}": {
 			"get": {
 				"description": "Returns a recipe",
-        "produces": [
-          "application/json"
-        ],
+				"produces": ["application/json"],
 				"parameters": [
 					{
 						"name": "id",
@@ -95,10 +93,7 @@
 					"200": {
 						"description": "OK"
 					}
-				},
-        "security": [
-          "oauth": ["read:recipes"]
-        ]
+				}
 			},
 			"put": {
 				"description": "",
