@@ -12,11 +12,6 @@ const ObjectId = require("mongodb").ObjectId;
 // Get all recipes
 
 routes.get("/", (req, res) => {
-	/* #swaggerAutogen.security = [
-		{
-			oAuthSample: ["write_recipes", "read_recipes"],
-		},
-	]; */
 	const results = connect.getCollection().find();
 	results.toArray().then((documents) => {
 		res.status(200).json(documents);
